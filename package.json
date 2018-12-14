@@ -1,0 +1,30 @@
+{
+  "name": "material-node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducxomme/material-node-api.git"
+  },
+  "author": "DucNguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ducxomme/material-node-api/issues"
+  },
+  "homepage": "https://github.com/ducxomme/material-node-api#readme"
+}
