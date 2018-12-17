@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect(
     'mongodb://material:' +
-    'material' +
+    process.env.MONGO_ATLAS_PW +
     '@material-node-api-shard-00-00-r4jtb.mongodb.net:27017,material-node-api-shard-00-01-r4jtb.mongodb.net:27017,material-node-api-shard-00-02-r4jtb.mongodb.net:27017/test?ssl=true&replicaSet=material-node-api-shard-0&authSource=admin&retryWrites=true', {
         useNewUrlParser: true,
         useCreateIndex: true
@@ -15,6 +15,7 @@ mongoose.connect(
 
 const materialRoutes = require('./api/routes/material');
 const employeeRoutes = require('./api/routes/employee');
+const orderRoutes = require('./api/routes/order');
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 
 app.use('/material', materialRoutes);
 app.use('/employee', employeeRoutes);
+app.use('/order', orderRoutes);
 
 
 app.use((req, res, next) => {
